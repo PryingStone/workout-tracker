@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Pulse · Workout Tracker",
+    "slug": "pulse-workout-tracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pulse.workouttracker"
+    },
+    "android": { "package": "com.pulse.workouttracker" },
+    "plugins": ["expo-secure-store", "expo-notifications"],
+    "web": { "bundler": "metro", "output": "single" }
+  }
+}

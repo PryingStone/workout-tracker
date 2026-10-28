@@ -1,0 +1,21 @@
+services:
+  mongo:
+    image: mongo:8.0
+    ports:
+      - '127.0.0.1:27017:27017'
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'mongosh',
+          '--quiet',
+          '--eval',
+          'quit(db.runCommand({ping:1}).ok ? 0 : 1)',
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+volumes:
+  mongo-data:

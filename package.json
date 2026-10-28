@@ -1,0 +1,26 @@
+{
+  "name": "workout-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w @pulse/api",
+    "dev:mobile": "npm run start -w @pulse/mobile",
+    "web": "npm run web -w @pulse/mobile",
+    "test": "npm test -w @pulse/api",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build -w @pulse/api && npm run build -w @pulse/mobile",
+    "test:e2e": "playwright test",
+    "setup": "node scripts/setup.mjs",
+    "format": "prettier --write apps tests scripts docs README.md package.json playwright.config.ts compose.yaml"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "prettier": "^3.9.10"
+  }
+}
